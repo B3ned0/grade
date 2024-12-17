@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c985f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #deb4f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #000000;
+        }
+        #inputScore {
+            padding: 10px;
+            width: 50px;
+            text-align: center;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+        #submitScore {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #f8b4e0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hover">
+            <h1 id="Texts">Grade</h1>
+            <input type="number" id="inputScore" placeholder="0-100" min="0" max="100">
+            <button id="submitScore">Submit</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('submitScore').addEventListener('click', function() {
+            let score = document.getElementById('inputScore').value;
+            let grade;
+
+            if (score >= 80) {
+                grade = 4;
+            } else if (score >= 70) {
+                grade = 3;
+            } else if (score >= 60) {
+                grade = 2;
+            } else if (score >= 50) {
+                grade = 1;
+            } else {
+                grade = 0;
+            }
+
+            document.getElementById("result").innerHTML = `Your Grade is ${grade}`;
+        });
+    </script>
+</body>
+</html>

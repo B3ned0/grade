@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Calculator</title>
+</head>
+<body>
+    <h1>Temperature Calculator</h1>
+    
+    <div>
+        <h2>Celsius to Fahrenheit</h2>
+        <button onclick="toFahrenheit()">Convert to Fahrenheit</button>
+    </div>
+
+    <div>
+        <h2>Fahrenheit to Celsius</h2>
+        <button onclick="toCelsius()">Convert to Celsius</button>
+    </div>
+
+    <script>
+
+        function toCelsius(fahrenheit) {
+            let fahrenheit = prompt("Enter temperature in Fahrenheit:");
+            if (fahrenheit !== null && !isNaN(fahrenheit)) {
+                let celsius = (fahrenheit - 32) * 5/9;
+                alert(fahrenheit + "°F is " + celsius.toFixed(2) + "°C");
+            } else {
+                alert("Please enter a valid number!");
+            }
+        }
+
+        function toFahrenheit(celsius) {
+            let celsius = prompt("Enter temperature in Celsius:");
+            if (celsius !== null && !isNaN(celsius)) {
+                let fahrenheit = (celsius * 9/5) + 32;
+                alert(celsius + "°C is " + fahrenheit.toFixed(2) + "°F");
+            } else {
+                alert("Please enter a valid number!");
+            }
+        }
+
+        function display(element, value) {
+            document.getElementById().innerHTML = value
+        }
+
+        function sayHello() {
+            return "Hello";
+        }
+
+        function getAge() {
+            return 17;
+        }
+
+        let input = prompt('Enter your name');
+        alert(sayHello() + " " + input);
+        alert(getAge());
+    </script>
+</body>
+</html>
